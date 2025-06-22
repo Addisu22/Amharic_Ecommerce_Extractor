@@ -29,14 +29,14 @@ async def handler(event):
 
     if msg.media:
         if isinstance(msg.media, MessageMediaPhoto):
-            os.makedirs("media/photos", exist_ok=True)
-            path = f"media/photos/{msg.id}.jpg"
+            os.makedirs("Data/media/photos", exist_ok=True)
+            path = f"Data/media/photos/{msg.id}.jpg"
             await client.download_media(msg.media, path)
-            record["media_type"] = "photo"
-            record["media_path"] = path
+            record["Data/media_type"] = "photo"
+            record["Data/media_path"] = path
         elif isinstance(msg.media, MessageMediaDocument):
-            os.makedirs("media/docs", exist_ok=True)
-            path = f"media/docs/{msg.id}.doc"
+            os.makedirs("Data/media/docs", exist_ok=True)
+            path = f"Data/media/docs/{msg.id}.doc"
             await client.download_media(msg.media, path)
             record["media_type"] = "doc"
             record["media_path"] = path
