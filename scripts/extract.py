@@ -42,4 +42,4 @@ async def handler(event):
             record["media_path"] = path
 
     save_message(record)
-    print(f"📥 {record['channel']}: {cleaned[:50]}...")
+    print(f" {record['channel']}: {cleaned[:50]}...")
